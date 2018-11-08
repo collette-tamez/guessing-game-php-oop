@@ -6,6 +6,7 @@
     }
 ?>
 <?php
+    $display_message = "Between 1 and 10";
     if(!empty($_GET['user_guess'])){
         print_r("your guess was ".$_GET['user_guess']); 
         if($_GET['user_guess'] > $_SESSION['random_number']){
@@ -20,16 +21,7 @@
     }
 ?>
 <div id="display">
-   <?php 
-    if(!empty($_GET['user_guess'])){
-    ?>
-       you guessed: <?= $_GET['user_guess'] ?>
-    <?php
-        print_r($display_message);
-    } else{
-        echo "Between 1 and 10";
-    }
-    ?>
+   <?= $display_message ?>
 </div>
 <form method="get">
     <input type="text" name="user_guess"/>
