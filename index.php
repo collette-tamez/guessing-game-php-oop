@@ -33,3 +33,16 @@
     <input type="text" name="user_guess"/>
     <button>Make a guess!</button>
 </form>
+<div>
+    So far you have guessed the numbers:
+    <ul>
+    <?php
+        if(!empty($_SESSION['history'])){
+            foreach($_SESSION['history'] as $number){
+                ?> <li><?= $number; ?></li>
+                <?php
+            }
+        }
+    ?>
+    </ul>
+</div>
