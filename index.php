@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['random_number'])){
+        $_SESSION['random_number'] = rand(1,10);
+    }
+?>
 <div id="display">
 <?php
     if(!empty($_GET['user_guess'])){
