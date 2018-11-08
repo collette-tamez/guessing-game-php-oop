@@ -16,6 +16,7 @@
             $display_message = "Too cold!!";
         } else if($user_guess == $_SESSION['random_number']) {
             $display_message = "YA DID IT";
+            unset($_SESSION['random_number']);
         } else {
             $display_message = "how could this have happened.....";
         }
