@@ -8,13 +8,15 @@
 <?php
     $display_message = "Between 1 and 10";
     if(!empty($_GET['user_guess'])){
+        $user_guess = (int)$_GET['user_guess'];
         print_r("your guess was ".$_GET['user_guess']); 
-        if($_GET['user_guess'] > $_SESSION['random_number']){
+        if($user_guess > $_SESSION['random_number']){
             $display_message = "Too hot!";
-        } else if($_GET['user_guess'] < $_SESSION['random_number']) {
+        } else if($user_guess < $_SESSION['random_number']) {
             $display_message = "Too cold!!";
-        } else if($_GET['user_guess'] == $_SESSION['random_number']) {
+        } else if($user_guess == $_SESSION['random_number']) {
             $display_message = "YA DID IT";
+            unset($_SESSION['random_number']);
         } else {
             $display_message = "how could this have happened.....";
         }
